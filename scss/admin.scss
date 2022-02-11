@@ -1,0 +1,10 @@
+@import '_variables.scss';
+
+#editor .editor-styles-wrapper {
+	@import '_bootstrap.scss';
+	@import '_fonts.scss';
+	@import '_forms.scss';
+}
+
+@import '_base.scss';
+@import '_editor.scss';

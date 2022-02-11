@@ -1,0 +1,197 @@
+{
+    "key": "group_60a688d32980d",
+    "title": "Grid Wrapper",
+    "fields": [
+        {
+            "key": "field_60a688d32e092",
+            "label": "Settings",
+            "name": "settings",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_60a688d32ff2f",
+                    "label": "Columns Per Row (Large Screen)",
+                    "name": "columns_per_row_desktop",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "grid-lg-12": "1",
+                        "grid-lg-6": "2",
+                        "grid-lg-5": "2 - spaced",
+                        "grid-lg-4": "3",
+                        "grid-lg-3": "4",
+                        "grid-lg-2": "6"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "grid-lg-4",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_60a688d32ff44",
+                    "label": "Columns Per Row (Tablet Screen)",
+                    "name": "columns_per_row_tablet",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "grid-sm-12": "1",
+                        "grid-sm-6": "2",
+                        "grid-sm-4": "3",
+                        "grid-sm-3": "4"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "grid-sm-6",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_60a688d32ff5c",
+                    "label": "Columns Per Row (Mobile Screen)",
+                    "name": "columns_per_row_mobile",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "grid-12": "1",
+                        "grid-6": "2",
+                        "grid-4": "3"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "grid-12",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_60a688d32ff67",
+                    "label": "Grid Vertical Align",
+                    "name": "grid_vertical_align",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "align-items-start": "Top",
+                        "align-items-center": "Middle",
+                        "align-items-end": "Bottom",
+                        "align-items-stretch": "Stretch Content"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "align-items-center",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_60a688d32ff6f",
+                    "label": "Grid Horizontal Align",
+                    "name": "grid_horizontal_align",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "justify-content-start": "Left",
+                        "justify-content-center": "Center",
+                        "justify-content-around": "Center - Spaced",
+                        "justify-content-end": "Right"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "justify-content-center",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_60a688d32ff79",
+                    "label": "Background Color",
+                    "name": "section_background_color",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "has-white-background-color": "<div class=\"color-preview has-white-background-color\"><\/div> White",
+                        "has-grey-light-background-color": "<div class=\"color-preview has-grey-light-background-color\"><\/div> Light Grey"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "has-white-background-color",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/grid-wrapper"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1641492382
+}

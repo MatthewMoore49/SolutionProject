@@ -1,0 +1,164 @@
+@import 'variables.scss';
+#editor .editor-styles-wrapper {
+	.block-editor-block-list__block.wp-block {
+		max-width: 95%;
+	}
+
+	// put a light border around acf blocks in editor
+	// to make them easier to click and edit
+	.block-editor-block-list__block[data-type^="acf"] {
+		border: 2px solid rgba(#E7E9EB, 0.5);
+	}
+
+
+	.block-editor-block-list__block[data-type="acf/button"] {
+		width: 100% !important;
+	}
+
+	.components-popover.block-editor-block-list__block-popover {
+		z-index: 9999999;
+	}
+
+	.wp-block-spacer {
+	    clear: both;
+	    width: 100%;
+	    flex-shrink: 0;
+	}
+
+	.img-fluid { 
+		width:100%; 
+	}
+
+	// Grid styles here to extend bootstrap
+	.acf-block-preview {
+		.grid-wrapper {
+			 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+
+				h1, h2, h3, h4, hr, p, .block-list-appender {
+					width: 100%;
+					flex-shrink: 0;
+				}
+			}
+
+			@for $i from 1 through 12 {
+				&.grid-xl-#{$i} .wp-block[data-type="acf/grid-item"] {
+					@extend .col-xl-#{$i};
+				}
+				&.grid-lg-#{$i} .wp-block[data-type="acf/grid-item"] {
+					@extend .col-lg-#{$i};
+				}
+				&.grid-md-#{$i} .wp-block[data-type="acf/grid-item"] {
+					@extend .col-md-#{$i};
+				}
+				&.grid-sm-#{$i} .wp-block[data-type="acf/grid-item"] {
+					@extend .col-sm-#{$i};
+				}
+				&.grid-#{$i} .wp-block[data-type="acf/grid-item"] {
+					@extend .col-#{$i};
+				}
+			}
+
+			// add class 'override' to grid wrapper
+			// and bootstrap col class to the grid item
+			// to override acf col sizes
+			&.override {
+				@for $i from 1 through 12 {
+					.wp-block[data-type="acf/grid-item"].col-xl-#{$i} {
+						@extend .col-xl-#{$i};
+					}
+					.wp-block[data-type="acf/grid-item"].col-lg-#{$i} {
+						@extend .col-lg-#{$i};
+					}
+					.wp-block[data-type="acf/grid-item"].col-md-#{$i} {
+						@extend .col-md-#{$i};
+					}
+					.wp-block[data-type="acf/grid-item"].col-sm-#{$i} {
+						@extend .col-sm-#{$i};
+					}
+					.wp-block[data-type="acf/grid-item"].col-#{$i} {
+						@extend .col-#{$i};
+					}
+				}
+			}
+
+			.wp-block[data-type="acf/grid-item"] {
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			.grid-item {
+				width: 100% !important;
+			}
+
+
+			&.align-items-start > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				@extend .align-items-start;
+			}
+			&.align-items-center > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				@extend .align-items-center;
+			}
+			&.align-items-end > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				@extend .align-items-end;
+			}
+			&.align-items-stretch > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				@extend .align-items-stretch;
+			}
+
+			&.justify-content-start > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				@extend .justify-content-start;
+			}
+			&.justify-content-center > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				@extend .justify-content-center;
+			}
+			&.justify-content-around > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				@extend .justify-content-around;
+			}
+			&.justify-content-end > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				@extend .justify-content-end;
+			}
+		}
+	}
+}
+
+// Outside editor -------------------------------------------
+// any radio buttons for ACF background colors
+.acf-field-radio[data-name=background_color] .acf-radio-list {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    li {
+    	float: none;
+    	width: 150px;
+    }
+}
+
+.editor-button-block-radio {
+	padding: 5px;
+	color: $colorWhite;
+	margin: 2px;
+	display: inline-block;
+
+	&.transparent {
+		border: 1px solid $colorBlack;
+		color: $colorBlack;
+	}
+}
+
+.color-preview {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    margin-right: 5px;
+    margin-bottom: -6px;
+}
+
+.block-directory-downloadable-blocks-panel {
+	display: none !important;
+}

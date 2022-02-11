@@ -1,0 +1,32 @@
+// Gutenberg color options
+// -- see editor-color-palette in functions.php
+$colors: (
+    'black' : $colorBlack,
+    'white' : $colorWhite,
+    'grey-light' : $colorGreyLight
+);
+@each $name, $color in $colors {
+    .has-#{$name}-color {
+        color: $color;
+    }
+    .has-#{$name}-background-color {
+        background-color: $color;
+    }
+}
+
+// wp align classes
+.alignright { text-align: right; margin: 10px 0 0 20px; }
+.alignleft { text-align: left; margin: 10px 20px 0 0; }
+.aligncenter { text-align: center; margin: 0 auto; display: block; }
+
+// close button for modals
+// used in a few places, so putting here
+.modal .btn-close {
+	padding: 10px 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: 0;
+    z-index: 9;
+}

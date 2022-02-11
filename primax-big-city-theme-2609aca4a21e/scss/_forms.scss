@@ -1,0 +1,86 @@
+// Buttons
+.btn-container {
+	float: none !important;
+	margin: 0;
+}
+
+.btn {
+	@include btnBase();
+}
+
+.btn-primary {
+	@include btnDefault($colorWhite, $colorBlack);
+}
+
+.btn-secondary {
+	@include btnDefault($colorBlack, $colorWhite);
+}
+
+.btn-disabled {
+	opacity: 0.75;
+	pointer-events: none;
+	cursor: disabled;
+}
+
+// Forms
+/* Inputs
+-------------------------------------------------------------------*/
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=url],
+input[type=date],
+input[type=tel],
+textarea {
+	@include inputBase();
+}
+
+label {
+	@extend .fs4;
+}
+
+body .gform_wrapper {
+	input[type=text],
+	input[type=email],
+	input[type=number],
+	input[type=url],
+	input[type=date],
+	input[type=tel],
+	textarea {
+		@include inputBase();
+	}
+
+	.gfield_label {
+		@extend .fs4;
+	}
+
+	.gfield_checkbox, .gfield_radio {
+	    display: flex;
+	    flex-direction: column;
+
+	    @include sm {
+	    	flex-direction: row;
+	    	flex-wrap: wrap;
+	    }
+
+	    .gchoice {
+	    	margin-right: 20px;
+	    	margin-bottom: 5px;
+	    }
+	}
+
+	.gfield {
+		// this gives space for error messages
+		margin-left: -10px;
+		margin-right: -10px;
+		padding: 5px 10px;
+
+		&.gfield_error {
+			background-color: rgba($colorBlack, 0.2);
+		}
+	}
+
+	.gform_button {
+		@include btnDefault($colorWhite, $colorBlack);
+	}
+}

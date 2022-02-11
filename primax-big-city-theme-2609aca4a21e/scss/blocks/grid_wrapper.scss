@@ -1,0 +1,33 @@
+@import '../variables.scss';
+
+// Most grid styles in _editor.scss and _frontend.scss
+// so they can extend bootstrap classes
+
+// Grid 
+.grid-wrapper {
+	padding: 40px 0;
+
+	.grid-item {
+		padding: 25px 15px;
+		:last-child {
+			margin-bottom: 0;
+		}
+	} 
+
+	&:first-child(:not(.grid-item)) {
+		margin-top: 20px;
+	}
+
+	> .col {
+		padding: 0;
+	}
+
+	&.extra-padded {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		@include md {
+			padding-top: 120px;
+			padding-bottom: 120px;
+		}
+	}
+}

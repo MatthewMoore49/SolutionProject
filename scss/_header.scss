@@ -1,0 +1,126 @@
+$headerMobile : 60px;
+$headerDesktop : 90px;
+
+// for a fixed header
+body {
+	padding-top: $headerMobile;
+	@include sm {
+		padding-top: $headerDesktop;
+	}
+}
+
+header.main {
+	background-color: $colorWhite;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	padding: 4px 0;
+}
+
+.navbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	&.navbar-active {
+		.navbar-menu {
+			right: 0;
+		}
+		.navbar-toggler-open {
+			display: none;
+		}
+		.navbar-toggler-close {
+			display: block;
+		}
+	}
+
+	&-logo {
+		width: 140px;
+		z-index: 999;
+
+		@include sm {
+			width: 220px;
+		}
+	}
+
+	&-menu {
+		position: fixed;
+	    height: calc(100vh - $headerMobile);
+	    width: 100%;
+		right: -100%;
+	    bottom: 0;
+	    top: $headerMobile;
+	    background: $colorWhite;
+	    padding: 5px 30px 30px;
+	    transition: right 0.5s;
+	    overflow: auto;
+
+		@include lg {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: center;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			position: relative;
+			height: auto;
+			width: auto;
+			right: auto;
+			top: auto;
+			overflow: initial;
+		}
+			
+		.dropdown-menu {
+			@include lg {
+				position: absolute;
+				margin: 0;
+				padding: 0;
+				background-color: $colorWhite;
+				z-index: 9;
+				display: none;
+			}
+		}
+
+		.menu-item {
+			list-style-type: none;
+			padding: 10px;
+			margin: 0;
+
+			&:hover {
+				.dropdown-menu {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&-toggler {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		z-index: 999;
+		transform: translate(-50%, -50%);
+		width: 40px;
+		height: 40px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: transparent;
+		border: 0;
+
+		@include lg {
+			display: none;
+		}
+
+		&-open {
+			display: block;
+		}
+		&-close {
+			display: none;
+		}
+	}
+}

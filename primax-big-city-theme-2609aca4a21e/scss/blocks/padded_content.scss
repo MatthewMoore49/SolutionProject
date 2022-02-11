@@ -1,0 +1,29 @@
+@import '../variables.scss';
+
+// One col, padded
+.padded-content {
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	@include md {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+		
+	:last-child {
+		margin-bottom: 0;
+	}
+	
+	ul, li {
+		text-align: left;
+	}
+
+	&.extra-padded {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		@include md {
+			padding-top: 120px;
+			padding-bottom: 120px;
+		}
+	}
+}

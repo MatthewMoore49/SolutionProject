@@ -1,0 +1,61 @@
+/* Site Wide
+-------------------------------------------------------------------*/
+html, body {
+	max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+// For full width blocks
+.alignfull, .fullwidth {
+    margin-left: calc( -100vw / 2 + 100% / 2 );
+    margin-right: calc( -100vw / 2 + 100% / 2 );
+    max-width: 100vw;
+}
+.alignfull img {
+    width: 100vw;
+}
+
+// Grid helpers here so we can extend bootstrap
+.grid-wrapper {
+	@for $i from 1 through 12 {
+		&.grid-xl-#{$i} .grid-item {
+			@extend .col-xl-#{$i};
+		}
+		&.grid-lg-#{$i} .grid-item {
+			@extend .col-lg-#{$i};
+		}
+		&.grid-md-#{$i} .grid-item {
+			@extend .col-md-#{$i};
+		}
+		&.grid-sm-#{$i} .grid-item {
+			@extend .col-sm-#{$i};
+		}
+		&.grid-#{$i} .grid-item {
+			@extend .col-#{$i};
+		}
+	}
+
+	// add class 'override' to grid wrapper
+	// and bootstrap col class to the grid item
+	// to override acf col sizes
+	&.override {
+		@for $i from 1 through 12 {
+			.col-xl-#{$i}.grid-item {
+				@extend .col-xl-#{$i};
+			}
+			.col-lg-#{$i}.grid-item {
+				@extend .col-lg-#{$i};
+			}
+			.col-md-#{$i}.grid-item {
+				@extend .col-md-#{$i};
+			}
+			.col-sm-#{$i}.grid-item {
+				@extend .col-sm-#{$i};
+			}
+			.col-#{$i}.grid-item {
+				@extend .col-#{$i};
+			}
+		}
+	}
+}

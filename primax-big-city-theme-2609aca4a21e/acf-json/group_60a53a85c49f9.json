@@ -1,0 +1,64 @@
+{
+    "key": "group_60a53a85c49f9",
+    "title": "Button Block",
+    "fields": [
+        {
+            "key": "field_60a53aa0e6103",
+            "label": "CTA",
+            "name": "cta",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_60a53aade6104",
+            "label": "Style",
+            "name": "style",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "btn-primary": "<span class=\"has-blue-background-color editor-button-block-radio\">Primary<\/span>",
+                "btn-secondary": "<span class=\"has-blue-text-color editor-button-block-radio\">Secondary<\/span>"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "btn-primary",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/button"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1640120542
+}

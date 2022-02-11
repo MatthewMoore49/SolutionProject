@@ -1,0 +1,151 @@
+// media queries
+// -------------------------------------------------------------------
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+@mixin sm { @media (min-width: #{$sm}) { @content; } }
+@mixin md { @media (min-width: #{$md}) { @content; } }
+@mixin lg { @media (min-width: #{$lg}) { @content; } }
+@mixin xl { @media (min-width: #{$xl}) { @content; } }
+@mixin xxl { @media (min-width: #{$xxl}) { @content; } }
+
+// Colors
+// -------------------------------------------------------------------
+$colorBlack : #000;
+$colorWhite : #fff;
+$colorGreyLight : #f8f8f8;
+
+// Fonts/Text
+// -------------------------------------------------------------------
+$fontDefault : Helvetica, sans-serif;
+
+@mixin letter-spacing($spacing) {
+  letter-spacing: calc($spacing / 1000) * 1em;
+}
+
+// Text mixins
+// -------------------------------------------------------------------
+@mixin largeHeading(){
+  font-family: $fontDefault;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 300;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 25px;
+
+  @include md {
+    font-size: 60px;
+    margin-bottom: 30px;
+  }
+}
+
+@mixin mediumHeading(){
+  font-family: $fontDefault;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 25px;
+
+  @include md {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@mixin smallHeading(){
+  font-family: $fontDefault;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 25px;
+
+  @include md {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@mixin copyDefault(){
+  font-family: $fontDefault;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 20px;
+
+  @include lg {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+}
+
+
+// button mixins
+// -------------------------------------------------------------------
+@mixin btnBase() {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+
+  font-family: $fontDefault;
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+  padding: 10px 25px;
+  border-radius: 30px;
+  min-width: 200px;
+  max-width: 100%;
+  transition: all 0.2s;
+
+  @include sm {
+    font-size: 16px;
+    padding: 15px 25px;
+    min-width: 270px;
+  }
+}
+@mixin btnDefault($txtColor, $bgColor){
+  @include btnBase();
+
+  color: $txtColor;
+  border: 1px solid $bgColor;
+  background-color: $bgColor;
+
+  &:hover, &:focus {
+    color: $bgColor;
+    border-color: $bgColor;
+    background-color: $txtColor;
+    outline: none;
+  }
+}
+
+@mixin inputBase() {
+  font-family: $fontDefault;
+  font-size: 15px;
+  line-height: 1.1;
+  font-weight: 400;
+  text-align: left;
+  color: $colorBlack;
+  border: 1px solid $colorBlack;
+  border-radius: 0;
+  background-color: $colorWhite;
+  display: block;
+  width: 100%;
+  padding: 8px 15px;
+
+  &:focus {
+    outline: none;
+    border-color: $colorBlack;
+    background-color: $colorGreyLight;
+  }
+}

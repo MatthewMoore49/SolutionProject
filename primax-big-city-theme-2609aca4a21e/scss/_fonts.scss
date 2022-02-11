@@ -1,0 +1,39 @@
+/* Type
+-------------------------------------------------------------------*/
+body {
+	color: $colorBlack;
+	font-family: $fontDefault;
+	font-size: 14px;
+	@include lg { 
+		font-size: 16px; 
+	}
+}
+
+h1,
+.fs1 {
+	@include largeHeading();
+}
+h2,
+.fs2 {
+	@include mediumHeading();
+}
+
+h3,
+.fs3 {
+	@include smallHeading();
+}
+
+h4,
+.fs4{
+	@include smallHeading();
+}
+
+h5,
+.fs5 {
+	@include copyDefault();
+	font-weight: 800;
+}
+
+p, li {
+	@include copyDefault();
+}
